@@ -111,19 +111,19 @@ def scrape_quadrants():
     return mars_data
     
 
-def scrape_facts():
-    # Visit space-facts.com for Mars facts
-    url = 'https://space-facts.com/mars/'
-    time.sleep(0)
-    try:
-        facts = pd.read_html(url)
-        facts_df = facts[1]
-        facts_df.columns = ["Fact", "Value"]
-        facts_df.set_index("Fact", inplace=True)
-        MARS = facts_df.to_html()
-        mars_data["Facts"] = MARS
-    except NameError:
-        pass
+# def scrape_facts():
+#     # Visit space-facts.com for Mars facts
+#     url = 'https://space-facts.com/mars/'
+#     time.sleep(0)
+#     try:
+#         facts = pd.read_html(url)
+#         facts_df = facts[1]
+#         facts_df.columns = ["Fact", "Value"]
+#         facts_df.set_index("Fact", inplace=True)
+#         MARS = facts_df.to_html()
+#         mars_data["Facts"] = MARS
+#     except NameError:
+#         pass
     
-    return mars_data
+#     return mars_data
     

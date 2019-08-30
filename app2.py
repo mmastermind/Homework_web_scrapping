@@ -31,7 +31,7 @@ def scrape():
     mars_inf = mission_to_mars2.scrape_weather()
     mars_inf = mission_to_mars2.scrape_jpl()
     mars_inf = mission_to_mars2.scrape_quadrants()
-    mars_inf = mission_to_mars2.scrape_facts()
+    # mars_inf = mission_to_mars2.scrape_facts()
 
     # Update the Mongo database using updateOne due to the mongo version and upsert=True
     # mars_data.update_one({}, {"$set": done}, upsert=True)

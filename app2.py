@@ -16,7 +16,6 @@ def home():
 
     # Find record of data from the mongo database
     mars_data = mongo.db.mars_data.find_one()
-
     # Return template and data
     return render_template("index_hw.html", mars_data=mars_data)
 
@@ -31,17 +30,14 @@ def scrape():
     mars_inf = mission_to_mars2.scrape_weather()
     mars_inf = mission_to_mars2.scrape_jpl()
     mars_inf = mission_to_mars2.scrape_quadrants()
-    # mars_inf = mission_to_mars2.scrape_facts()
 
     # Update the Mongo database using updateOne due to the mongo version and upsert=True
-    # mars_data.update_one({}, {"$set": done}, upsert=True)
     print("llegamos")
-    print(mars_inf)
+    #print(mars_inf)
     # Syntaxis for insert_one example: result = db.test.insert_one({'x': 1})
     mars_data.insert_one(mars_inf)
-    # mars_db.insert_one({"status":"done"})
     print("terminamos")
-    # mars_data.update({}, mars_inf, upsert=True)
+    # mars_data.update({}, mars_inf, upsert=True)  update didn't work as it appears to be deprecated
 
     # Redirect back to home page
     return redirect("/")

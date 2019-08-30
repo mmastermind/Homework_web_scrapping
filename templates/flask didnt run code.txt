@@ -1,0 +1,63 @@
+        <!-- <tr>
+            <td style="text-align: center;">
+              <img src="{{mars_data.Hemispheres.[0].quad_url}}" alt="" />
+              <br />
+              <a>"{{mars_data.Hemispheres.[0].title}}"</a>
+            </td>
+            <td style="text-align: center;">
+              <img src="{{mars_data.Hemispheres.1.quad_url}}" alt="" />
+              <br />
+              <a>"{{mars_data.Hemispheres.1.title}}"</a>
+            </td>
+        </tr>
+        <tr>
+          <td style="text-align: center;">
+            <img src="{{mars_data.Hemispheres.2.quad_url}}" alt="" />
+            <br />
+            <a>"{{mars_data.Hemispheres.2.title}}"</a>
+        </td>
+        <td style="text-align: center;">
+            <img src="{{mars_data.Hemispheres.3.quad_url}}" alt="" />
+            <br />
+            <a>"{{mars_data.Hemispheres.3.title}}"</a>
+        </td> -->
+    <!-- </tr> -->
+    </table>
+
+      <!-- <div class="card-deck">
+          <hr>
+          <div class="col-md-12">
+              <div class="row">
+                  {%for i in mars_data.Hemispheres%}
+                  <div class="col-md-6">
+                      <div class="card text-white bg-dark" style="margin: 30px;">
+                          <img class="card-img-top" src="{{i.quad_url| default('static/images/error.png', true)}}" />
+                          <div class="card-body">
+                              <p class="card-text">{{i.title}}</p>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>   -->
+
+
+def scrape_facts():
+    # Visit space-facts.com for Mars facts
+    url = 'https://space-facts.com/mars/'
+    time.sleep(0)
+    try:
+#       tables = pd.read_html(url)
+        df = tables[1]
+        df.columns = ['Fact', 'Value']
+#         facts_df = facts[1]
+#         facts_df.columns = ["Fact", "Value"]
+        df.set_index("Fact", inplace=True)
+        html_table = df.to_html()
+#         MARS = facts_df.to_html()
+        mars_data["Facts"] = html_table
+    except NameError:
+        pass
+    
+    return mars_data

@@ -1,0 +1,13 @@
+{'Header': 'NASA Invites Students to Name Mars 2020 Rover', 
+'Paragraph': "Through Nov. 1, K-12 students in the U.S. are encouraged to enter an essay contest to name NASA's next Mars rover.", 'tweeter': None, 'weather': 'We won’t be hearing from @MarsCuriosity or @NASAInSight for the next 2 weeks during Mars solar conjunction. Read more about why Mars missions go silent every 2 years: https://www.wral.com/mars-spacecraft-go-quiet-during-solar-conjunction/18595551/\xa0…pic.twitter.com/fWruE2v151', 
+'jpl_image': 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA18058-1920x1200.jpg', 
+'Hemispheres': [{'quad_url': 'http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/cerberus_enhanced.tif/full.jpg', 
+                'title': 'Cerberus Hemisphere Enhanced'}, 
+                {'quad_url': 'http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg', 
+                'title': 'Schiaparelli Hemisphere Enhanced'}, 
+                {'quad_url': 'http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/syrtis_major_enhanced.tif/full.jpg', 'title': 'Syrtis Major Hemisphere Enhanced'}, {'quad_url': 'http://astropedia.astrogeology.usgs.gov/download/Mars/Viking/valles_marineris_enhanced.tif/full.jpg', 'title': 'Valles Marineris Hemisphere Enhanced'}]}
+terminamos
+127.0.0.1 - - [29/Aug/2019 19:33:02] "GET /scrape HTTP/1.1" 302 -
+127.0.0.1 - - [29/Aug/2019 19:33:02] "GET / HTTP/1.1" 200 -
+
+mars_data.Hemispheres.1.title

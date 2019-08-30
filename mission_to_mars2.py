@@ -95,7 +95,7 @@ def scrape_quadrants():
     time.sleep(0)   
     
     pages_urls = []
-    sub_pages = browser.find_by_css("a.product-item h3")
+    # sub_pages = browser.find_by_css("a.product-item h3")
     for page in range(4):
         quadrants = {}
         browser.find_by_css("a.product-item h3")[page].click()
@@ -107,23 +107,7 @@ def scrape_quadrants():
         
     mars_data["Hemispheres"] = pages_urls
     browser.quit()
-    # print(mars_data["Hemispheres"])
     return mars_data
     
 
-# def scrape_facts():
-#     # Visit space-facts.com for Mars facts
-#     url = 'https://space-facts.com/mars/'
-#     time.sleep(0)
-#     try:
-#         facts = pd.read_html(url)
-#         facts_df = facts[1]
-#         facts_df.columns = ["Fact", "Value"]
-#         facts_df.set_index("Fact", inplace=True)
-#         MARS = facts_df.to_html()
-#         mars_data["Facts"] = MARS
-#     except NameError:
-#         pass
-    
-#     return mars_data
     
